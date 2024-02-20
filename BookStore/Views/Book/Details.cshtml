@@ -1,0 +1,32 @@
+﻿@model BookStore.Models.Entities.Book
+@{
+}
+
+<div class="container pt-5">
+    <h3>Book Details</h3>
+    @if (Model is not null)
+    {
+        <div class="row pt-3">
+
+           <div class="col-md-8">
+                <input type="hidden" asp-for="Id" />
+                <div id="book-details">
+                    <p><strong>Title :</strong>  @Model.Title</p>
+                    <p><strong>Description :</strong>  @Model.Description</p>
+                    <p><strong>Author :</strong>  @Model.Author.AuthorName</p>
+                    <p><strong>Genre :</strong>  @Model.Genre.GenreName</p>              
+            </div>
+        </div>
+        <div class="col-md-4">
+
+            <div id="book-images"class="border border-dark" style="height:100px; width:75px">
+                <img src="..." class="rounded float-start" alt="..." />
+            </div>
+        </div>
+        </div>
+    }
+    else
+    {
+        <p>Book not Found</p>
+    }
+</div>
